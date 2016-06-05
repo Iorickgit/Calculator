@@ -12,9 +12,13 @@ class ViewController: UIViewController {
     
     var number1 : Int = 0
     var number2 : Int = 0
+    var number3 : Int = 0
     var tenki: Int = 0
     var operation : Int = 0
+    @IBOutlet var enzanshi : UILabel!
     @IBOutlet var label : UILabel!
+    @IBOutlet var label2: UILabel!
+    @IBOutlet var label3: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +39,8 @@ class ViewController: UIViewController {
         number2 = number1
         number1 = 0
         label.text = String(number1)
+        label2.text = String(number2)
+        enzanshi.text = String("+")
         operation = 1
     }
     
@@ -42,6 +48,8 @@ class ViewController: UIViewController {
         number2 = number1
         number1 = 0
         label.text = String(number1)
+        label2.text = String(number2)
+        enzanshi.text = String("-")
         operation = 2
     }
     
@@ -49,6 +57,8 @@ class ViewController: UIViewController {
         number2 = number1
         number1 = 0
         label.text = String(number1)
+        label2.text = String(number2)
+        enzanshi.text = String("×")
         operation = 3
     }
     
@@ -56,6 +66,8 @@ class ViewController: UIViewController {
         number2 = number1
         number1 = 0
         label.text = String(number1)
+        label2.text = String(number2)
+        enzanshi.text = String("÷")
         operation = 4
     }
     
@@ -63,25 +75,36 @@ class ViewController: UIViewController {
         number1 = 0
         number2 = 0
         label.text = String(number1)
+        label2.text = String(number2)
         operation = 0
     }
     
     @IBAction func equal(){
         if (operation == 1){
+            label2.text = String(number2)
             number1 = number2 + number1
+            number3 = number2
             label.text = String(number1)
+            label3.text = String(number3)
         }
         if(operation == 2){
+            label2.text = String(number2)
             number1 = number2 - number1
             label.text = String(number1)
+            label3.text = String(number3)
         }
         if(operation == 3){
+            label2.text = String(number2)
             number1 = number2 * number1
             label.text = String(number1)
+
+            label3.text = String(number3)
         }
         if(operation == 4){
+            label2.text = String(number2)
             number1 = number2 / number1
             label.text = String(number1)
+            label3.text = String(number3)
         }
     }
     
